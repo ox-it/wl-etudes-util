@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- for embedded building withing sakai -->
+	<!-- Note: set the version to the Sakai version you are using -->
+
+	<parent>
+		<artifactId>util</artifactId>
+		<groupId>org.etudes.util</groupId>
+		<version>1.0</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
+
+	<groupId>org.etudes.util</groupId>
+	<artifactId>etudes-util</artifactId>
+	<packaging>jar</packaging>
+	<name>etudes-util</name>
+	<version>1.0</version>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.sakaiproject.maven.plugins</groupId>
+				<artifactId>sakai</artifactId>
+				<version>M2</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.etudes.util</groupId>
+			<artifactId>etudes-util-api</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.0.4</version>
+		</dependency>
+		        <dependency>
+		            <groupId>org.sakaiproject.kernel</groupId>
+		            <artifactId>sakai-kernel-api</artifactId>
+		        </dependency>
+		        <dependency>
+		            <groupId>org.sakaiproject.kernel</groupId>
+		            <artifactId>sakai-component-manager</artifactId>
+		        </dependency>
+		        <dependency>
+            		<groupId>org.sakaiproject.kernel</groupId>
+            		<artifactId>sakai-kernel-util</artifactId>
+        		</dependency>
+	</dependencies>
+</project>
