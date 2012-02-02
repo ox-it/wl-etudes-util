@@ -1055,7 +1055,7 @@ public class XrefHelper
 			// get the source
 			ContentResource resource = ContentHostingService.getResource(id);
 			String type = resource.getContentType();
-			int size = resource.getContentLength();
+			long size = resource.getContentLength();
 			byte[] body = resource.getContent();
 
 			String[] parts = StringUtil.split(id, "/");
@@ -1406,7 +1406,7 @@ public class XrefHelper
 	 * @return true if there is a match, false if not.
 	 * @throws ServerOverloadException
 	 */
-	protected static boolean matches(ContentResource mr, String type, int size, byte[] body) throws ServerOverloadException
+	protected static boolean matches(ContentResource mr, String type, long size, byte[] body) throws ServerOverloadException
 	{
 		// check if the type and size match - get the cheap tests done first
 		if (!StringUtil.different(mr.getContentType(), type, true))
